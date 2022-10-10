@@ -1,4 +1,10 @@
 import javax.swing.plaf.synth.SynthTextAreaUI;
+interface waiterManager{
+    void sectionOnFire();
+    void escortClients();
+
+}
+
 
 interface waiterDropsOrder{
     void dropOrder();
@@ -7,9 +13,11 @@ interface waiterDropsOrder{
 
 
 
-public class Waiter extends Person implements waiterDropsOrder{
-    public Waiter(String Name){
+public class Waiter extends Person implements waiterDropsOrder,waiterManager{
+    public Manager m1;
+    public Waiter(String Name, Manager m1){
         super(Name);
+        this.m1 = m1;
     }
 
 
@@ -40,4 +48,12 @@ public class Waiter extends Person implements waiterDropsOrder{
         System.out.println("Here is your new order. I am sorry for the inconvenience. Enjoy your meal.\n");
     }
 
+
+    //func for the waiterManager interface
+    public void sectionOnFire(){
+        System.out.println("Mr." + m1.getManName() + ", our Section is on fire" );
+    }
+    public void escortClients(){
+
+    }
 }

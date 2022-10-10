@@ -14,6 +14,14 @@ public class Manager extends Person implements clientDisputes{
 
 
     //base func for our class
+
+    String getManName(){
+        return name;
+    }
+    @Override
+    void showName(){
+        System.out.println("I am the manager, " + name);
+    }
     void openRestaurant(){
         System.out.println("Uchiha RestoBar is now open\n");
     }

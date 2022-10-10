@@ -1,3 +1,4 @@
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.util.*;
 import java.util.List;
 import java.util.Random;
@@ -5,9 +6,9 @@ import java.util.Random;
 public class main {
     public static  void main(String[] args){
 
-        Waiter w1 = new Waiter("Cristian");
-        Client c1 = new Client("Jean", 1);
         Manager m1 = new Manager("Dan", "General Manager");
+        Waiter w1 = new Waiter("Cristian", m1);
+        Client c1 = new Client("Jean", 1);
         Stock stock = new Stock("Restaurant Stock");
         Bar b1 = new Bar("Bar");
         European e1 = new European("European");
@@ -22,6 +23,8 @@ public class main {
             System.out.println("Enter 1 for the normal client scenario");
             System.out.println("Enter 2 for the dropped the food scenario");
             System.out.println("Enter 3 for the manager replaced the food scenario");
+            System.out.println("Enter 4 for the manager and client argue scenario");
+            System.out.println("Enter 5 for the fire hazard scenario");
             System.out.println("Enter your choice:");
             ch = scan.nextInt();
             switch (ch){
@@ -89,7 +92,8 @@ public class main {
                     }
                     c1.left();
                     break;
-                case 5://
+                case 5://Section Emergency
+                    w1.sectionOnFire();
                     break;
                 case 9:
                     stock.showElements();
