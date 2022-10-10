@@ -2,6 +2,11 @@
 interface clientLeft{// for the cases in which our client left of various reasons
     void clientDropLeft();
 }
+interface clientSpecial{
+    void signWaiter();
+    void propose();
+    void spousesLeft();
+}
 
 interface clientUnpleased {
     void Complaint();
@@ -11,7 +16,7 @@ interface clientUnpleased {
     void conArgue();
 }
 
-public class Client extends Person implements clientLeft, clientUnpleased {
+public class Client extends Person implements clientLeft, clientUnpleased, clientSpecial {
     public int number;
     public Client(String Name,int Number){
         super(Name);
@@ -51,4 +56,15 @@ public class Client extends Person implements clientLeft, clientUnpleased {
         System.out.println("YOU DON'T UNDERSTAND NOTHING ABOUT FOOD");
     }
     public void conArgue(){System.out.println("You are so incompetent!");}
+
+    //for the clientSpecial interface
+    public void signWaiter() {
+        System.out.println("*Client winks at the waiter*");
+    }
+    public void propose(){
+        System.out.println("*The Client proposed to the partner*");
+    }
+    public void spousesLeft() {
+        System.out.println("Our clients left. Our special event is over. \n");
+    }
 }

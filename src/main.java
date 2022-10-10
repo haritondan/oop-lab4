@@ -1,6 +1,6 @@
-import javax.swing.plaf.synth.SynthTextAreaUI;
+
 import java.util.*;
-import java.util.List;
+
 import java.util.Random;
 
 public class main {
@@ -25,6 +25,9 @@ public class main {
             System.out.println("Enter 3 for the manager replaced the food scenario");
             System.out.println("Enter 4 for the manager and client argue scenario");
             System.out.println("Enter 5 for the fire hazard scenario");
+            System.out.println("Enter 6 for the special events scenario");
+            System.out.println("Enter 9 for the restaurant stocks scenario");
+            System.out.println("Enter 0 to stop the program");
             System.out.println("Enter your choice:");
             ch = scan.nextInt();
             switch (ch){
@@ -32,8 +35,17 @@ public class main {
                     c1.arrived();
                     w1.greetClient();
                     w1.showMenus();
-                    System.out.println("Client chose the " + b1.name + " menu: ");
-                    b1.showElements();
+                    int menu1 = random.nextInt(1,4);
+                    if(menu1 == 1) {
+                        System.out.println("Client chose the " + b1.name + " menu: ");
+                        b1.showElements();
+                    } else if (menu1 == 2) {
+                        System.out.println("Client chose the " + e1.name + " menu: ");
+                        e1.showElements();
+                    }else {
+                        System.out.println("Client chose the " + s1.name + " menu: ");
+                        s1.showElements();
+                    }
                     c1.Order();
                     w1.bringOrder();
                     c1.payClient();
@@ -42,8 +54,17 @@ public class main {
                     c1.arrived();
                     w1.greetClient();
                     w1.showMenus();
-                    System.out.println("Client chose the " + b1.name + " menu: ");
-                    b1.showElements();
+                    int m2 = random.nextInt(1,4);
+                    if(m2 == 1) {
+                        System.out.println("Client chose the " + b1.name + " menu: ");
+                        b1.showElements();
+                    } else if (m2 == 2) {
+                        System.out.println("Client chose the " + e1.name + " menu: ");
+                        e1.showElements();
+                    }else {
+                        System.out.println("Client chose the " + s1.name + " menu: ");
+                        s1.showElements();
+                    }
                     c1.Order();
                     w1.dropOrder();
                     int i = random.nextInt(1,3);
@@ -59,8 +80,17 @@ public class main {
                     c1.arrived();
                     w1.greetClient();
                     w1.showMenus();
-                    System.out.println("Client chose the " + b1.name + " menu: ");
-                    b1.showElements();
+                    int m3 = random.nextInt(1,4);
+                    if(m3 == 1) {
+                        System.out.println("Client chose the " + b1.name + " menu: ");
+                        b1.showElements();
+                    } else if (m3 == 2) {
+                        System.out.println("Client chose the " + e1.name + " menu: ");
+                        e1.showElements();
+                    }else {
+                        System.out.println("Client chose the " + s1.name + " menu: ");
+                        s1.showElements();
+                    }
                     c1.Order();
                     c1.Vomit();
                     w1.cUnplesead();
@@ -74,8 +104,17 @@ public class main {
                     c1.arrived();
                     w1.greetClient();
                     w1.showMenus();
-                    System.out.println("Client chose the " + b1.name + " menu: ");
-                    b1.showElements();
+                    int m4 = random.nextInt(1,4);
+                    if(m4 == 1) {
+                        System.out.println("Client chose the " + b1.name + " menu: ");
+                        b1.showElements();
+                    } else if (m4 == 2) {
+                        System.out.println("Client chose the " + e1.name + " menu: ");
+                        e1.showElements();
+                    }else {
+                        System.out.println("Client chose the " + s1.name + " menu: ");
+                        s1.showElements();
+                    }
                     c1.Order();
                     c1.Vomit();
                     w1.cUnplesead();
@@ -103,10 +142,23 @@ public class main {
                     }
                     w1.sectionOnFire();
                     m1.escortFire();
+                    break;
+                case 6://Special Events
+                    c1.arrived();
+                    w1.greetClient();
+                    c1.signWaiter();
+                    w1.showMenus();
+                    c1.Order();
+                    w1.bringCakeRing();
+                    c1.propose();
+                    w1.fireworks();
+                    c1.spousesLeft();
 
                     break;
                 case 9:
                     stock.showElements();
+                    break;
+                case 0:
                     break;
                 default:
                     System.out.println("Wrong Input!");
@@ -117,7 +169,7 @@ public class main {
 
         }while(ch != 0);
         m1.closeRestaurant();
-        return;
+
     }
 
 }

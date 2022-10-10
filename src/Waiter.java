@@ -3,6 +3,10 @@ interface waiterManager{
     void sectionOnFire();
 
 }
+interface special{
+    void bringCakeRing();
+    void fireworks();
+}
 
 
 interface waiterDropsOrder{
@@ -12,7 +16,7 @@ interface waiterDropsOrder{
 
 
 
-public class Waiter extends Person implements waiterDropsOrder,waiterManager{
+public class Waiter extends Person implements waiterDropsOrder,waiterManager, special{
     public Manager m1;
     public Waiter(String Name, Manager m1){
         super(Name);
@@ -51,5 +55,13 @@ public class Waiter extends Person implements waiterDropsOrder,waiterManager{
     //func for the waiterManager interface
     public void sectionOnFire(){
         System.out.println("Mr." + m1.name + ", our section is on fire" );
+    }
+
+    //for the special interface
+    public void bringCakeRing(){
+        System.out.println("*The waiter brings the wrong meal(it's a cake and leaves it in from of the client)*");
+    }
+    public void fireworks() {
+        System.out.println("*Waiter pops up confetti*");
     }
 }
