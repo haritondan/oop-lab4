@@ -17,7 +17,7 @@ public class main {
         Random random = new Random();
         m1.openRestaurant();
 
-
+//
         int ch;
         do {
             System.out.println("Enter 1 for the normal client scenario");
