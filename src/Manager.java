@@ -1,10 +1,13 @@
-import java.awt.*;
 interface clientDisputes{
     void clientDisagree();
     void deescalateSituation();
     void escortClientOut();
 }
-public class Manager extends Person implements clientDisputes{
+
+interface managerResponsibility {
+    void escortFire();
+}
+public class Manager extends Person implements clientDisputes, managerResponsibility {
 
     public String position;
     Manager(String Name, String Position){
@@ -44,5 +47,10 @@ public class Manager extends Person implements clientDisputes{
     }
     public void escortClientOut() {
         System.out.println("Please, leave our restaurant now!");
+    }
+
+    //func for the managerResponsibility interface
+    public void escortFire() {
+        System.out.println("Dear Clients, we have fire at one of our sections. As of right now our restaurant is closed.\nPlease follow our waiters outside \n");
     }
 }

@@ -93,7 +93,17 @@ public class main {
                     c1.left();
                     break;
                 case 5://Section Emergency
+                    int sf = random.nextInt(1,4);
+                    if(sf == 1){
+                        b1.fire();
+                    } else if (sf == 2) {
+                        e1.fire();
+                    } else {
+                    s1.fire();
+                    }
                     w1.sectionOnFire();
+                    m1.escortFire();
+
                     break;
                 case 9:
                     stock.showElements();
@@ -101,6 +111,7 @@ public class main {
                 default:
                     System.out.println("Wrong Input!");
                     break;
+
             }
 
 

@@ -1,7 +1,6 @@
 import javax.swing.plaf.synth.SynthTextAreaUI;
 interface waiterManager{
     void sectionOnFire();
-    void escortClients();
 
 }
 
@@ -51,9 +50,6 @@ public class Waiter extends Person implements waiterDropsOrder,waiterManager{
 
     //func for the waiterManager interface
     public void sectionOnFire(){
-        System.out.println("Mr." + m1.getManName() + ", our Section is on fire" );
-    }
-    public void escortClients(){
-
+        System.out.println("Mr." + m1.name + ", our section is on fire" );
     }
 }

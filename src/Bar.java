@@ -18,4 +18,8 @@ public class Bar extends  Section{
         System.out.println(item.get(i));
         }
     }
+    @Override
+    public void fire(){
+        System.out.println("*" + name + " section is on fire*");
+    }
 }
